@@ -15,7 +15,6 @@ public class Veterinaria {
     @Expose
     private String direccion;
 
-
     @Expose
     private Double latitud;
     @SerializedName("longitud")
