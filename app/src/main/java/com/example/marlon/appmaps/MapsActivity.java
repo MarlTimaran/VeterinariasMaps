@@ -2,6 +2,7 @@ package com.example.marlon.appmaps;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.widget.Toast;
 
 import com.example.marlon.appmaps.Datos.Api;
@@ -64,10 +65,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         Veterinaria ins = (Veterinaria) institucion.get(i);
                         // Add a marker in Sydney and move the camera
                         LatLng sydney = new LatLng(ins.getLatitud(), ins.getLongitud());
-                        mMap.addMarker(new MarkerOptions().position(sydney).title("Nombre Establecimiento: " + ins.getNombre()));
+                        mMap.addMarker(new MarkerOptions().position(sydney).title(ins.getNombre() + " Tel:" + ins.getTelefono()));
                         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-
-
+                        mMap.getUiSettings().setZoomControlsEnabled(true);
                     }
                 } else {
 
